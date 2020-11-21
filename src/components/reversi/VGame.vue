@@ -1,13 +1,22 @@
 <template>
  <v-constainer>
-     <VBoard/>
+     <v-layout
+      justify-center
+     >
+        <VBoard/>
+     </v-layout>
  </v-constainer>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import VBoard from '@/components/reversi/VBoard.vue';
 
-@Component
-export default class VMain extends Vue {
+@Component({
+    components: {
+        VBoard,
+    },
+})
+export default class VGame extends Vue {
 }
 </script>
