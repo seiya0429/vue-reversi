@@ -10,8 +10,10 @@ export class Board {
 export class Row {
 
     public cells: Cell[];
+    public num: number;
 
     constructor(rowNumber: number) {
+        this.num = rowNumber;
         this.cells = [...Array(8).keys()].map(i => new Cell(i, rowNumber));
     }
 

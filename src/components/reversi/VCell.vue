@@ -6,10 +6,19 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
+
+import { Cell } from '../../models/reversi';
 
 @Component
 export default class VCell extends Vue {
+
+    @Prop({required: true})
+    public cell!: Cell;
+
+    public created() {
+        console.log(this.cell.x, this.cell.y)
+    }
 }
 </script>
 
