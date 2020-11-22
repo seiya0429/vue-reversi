@@ -11,7 +11,7 @@
 <script lang="ts">
 import { Vue, Component, Prop, Emit } from 'vue-property-decorator';
 
-import { Cell } from '../../models/reversi';
+import { Cell, Point } from '../../models/reversi';
 
 @Component
 export default class VCell extends Vue {
@@ -23,10 +23,10 @@ export default class VCell extends Vue {
     }
 
     @Emit('put')
-    public put(x: number, y: number) {}
+    public put(p: Point) {}
 
     public onClick() {
-        this.put(this.cell.x, this.cell.y);
+        this.put(new Point(this.cell.x, this.cell.y));
     }
 
     public get stoneClass() {
